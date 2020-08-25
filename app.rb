@@ -30,16 +30,20 @@ class App < Sinatra::Base
   end
 
   get '/:operation/:number1/:number2' do
-    if params[:operation] == "+"
-      params[:number1].to_i + params[:number2].to_i
-    elsif params[:operation] == "-"
-      params[:number2].to_i - params[:number1].to_i
-    elsif params[:operation] == "*"
-      params[:number1].to_i * params[:number2].to_i
-    elsif  params[:operation] == "/"
-      params[:number1].to_i / params[:number2].to_i
-    else
-      "Not valid option"
+    number1 = params[:number1].to_i
+    number2 = params[:number2].to_i
+
+    answer = 'Unable to perform this operation'
+
+    case params[:operation]
+    when 'add'
+      answer = (number1 + number2).to_s
+    when 'subtract'
+      answer = (number1 - number2).to_s
+    when 'multiply'
+      answer = (number1 * number2).to_s
+    when 'divide'
+      answer = (number1 / number2).to_s
     end
   end
   #accepts an operation (add, subtract, multiply or divide) and performs the operation on the two numbers provided, returning a String. For example, going to /add/1/2 should render 3 as a String.
