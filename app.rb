@@ -31,13 +31,13 @@ class App < Sinatra::Base
 
   get '/operation/:number1/:number2' do
     if params[:operation] == "+"
-      "#{params[:number].to_i}" + "#{params[:number].to_i} "
+      params[:number].to_i + params[:number].to_i
     elsif params[:operation] == "-"
-      "#{:number}" - "#{:number}"
+      params[:number].to_i - params[:number].to_i
     elsif params[:operation] == "*"
-      "#{:number}" * "#{:number}"
+      params[:number].to_i * params[:number].to_i
     elsif  params[:operation] == "/"
-      "#{:number}" / "#{:number}"
+      params[:number]to_i / params[:number].to_i}
     else
       "Not valid option"
     end
