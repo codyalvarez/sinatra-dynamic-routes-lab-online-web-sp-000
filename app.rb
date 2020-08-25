@@ -33,11 +33,11 @@ class App < Sinatra::Base
     if params[:operation] == "+"
       params[:number1].to_i + params[:number2].to_i
     elsif params[:operation] == "-"
-      params[:number].to_i - params[:number].to_i
+      params[:number1].to_i - params[:number2].to_i
     elsif params[:operation] == "*"
-      params[:number].to_i * params[:number].to_i
+      params[:number1].to_i * params[:number2].to_i
     elsif  params[:operation] == "/"
-      params[:number]to_i / params[:number].to_i
+      params[:number1]to_i / params[:number2].to_i
     else
       "Not valid option"
     end
