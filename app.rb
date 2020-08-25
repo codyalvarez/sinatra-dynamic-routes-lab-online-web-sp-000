@@ -37,7 +37,7 @@ class App < Sinatra::Base
     elsif params[:operation] == "*"
       params[:number].to_i * params[:number].to_i
     elsif  params[:operation] == "/"
-      params[:number]to_i / params[:number].to_i}
+      params[:number]to_i / params[:number].to_i
     else
       "Not valid option"
     end
