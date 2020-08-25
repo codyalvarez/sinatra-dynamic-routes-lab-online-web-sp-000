@@ -31,7 +31,7 @@ class App < Sinatra::Base
 
   get '/operation/:number1/:number2' do
     if params[:operation] == "+"
-      params[:number].to_s + params[:number].to_s
+      params[:number].to_i + params[:number].to_i
     # elsif params[:operation] == "-"
     #   params[:number].to_i - params[:number].to_i
     # elsif params[:operation] == "*"
